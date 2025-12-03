@@ -1,25 +1,32 @@
-/*function greetUser() {
-let nombere = prompt("Enter a number:");
-let color = prompt("Enter a color:");
-document.write("<h2 style='color:" + color + "'>The number you entered is: " + nombere + "</h2>");
 
-if (nombere % 2 === 0) {
-    document.write("<p>The number " + nombere + " is even.</p>");
-} else {
-    document.write("<p>The number " + nombere + " is odd.</p>");
+let intentos; // número de intentos
+let num;
+
+function piensaRandom() {
+    intentos = 0;
+    num = parseInt(Math.random() * 100);
+    console.log("El número es: " + num)
 }
-document.write("<p style='color:" + color + "'>This text is in your chosen color!</p>");
-console.log("User entered number: " + nombere + " and color: " + color);
 
-let i = 1; // Inicialización de la variable contador
+function comprueba() {
+    let numUser = parseInt(document.getElementById("numUser").value);
+    let msg = ""
+        ; console.log(numUser)
+    if (numUser < num) {
+        msg = "El número es más grande";
+        intentos++;
+    } else {
+        if (numUser > num) {
+            msg = "El número es más pequeño";
+            intentos++;
+        } else {
+            msg = "Has acertado el número: " + num + " en " + intentos + " intentos.";
+        }
+    }
+    console.log(msg);
+    document.getElementById("mensajeUser").innerHTML=msg;
+}
 
-// Condición: Mientras la variable contador sea menor de 5
-do{
-console.log("Valor de i:", i);
-i = i + 1; // Incrementamos el valor de i
-}while (i < 10)
-document.write("<p>Loop finished. Final value of i: " + i + "</p>");
-}*/
 
 
 // 一个密码锁 密码锁需要三个1到9的数字组合才能解开
